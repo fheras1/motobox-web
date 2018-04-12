@@ -25,6 +25,7 @@ import { ApiService } from './shared/services/api.service';
 import { PhoneCreateComponent } from './components/phone/phone-create/phone-create.component';
 import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.component';
 import { BoxesListComponent } from './components/boxes/boxes-list/boxes-list.component';
+import { BoxesBaseComponent } from './components/boxes/boxes-base/boxes-base.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BoxesListComponent } from './components/boxes/boxes-list/boxes-list.com
     SignupComponent,
     PhoneCreateComponent,
     PhoneBaseComponent,
-    BoxesListComponent
+    BoxesListComponent,
+    BoxesBaseComponent
   ],
   imports: [
     BrowserModule,
