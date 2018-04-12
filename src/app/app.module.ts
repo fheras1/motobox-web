@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import './rxjs.operators';
@@ -20,8 +21,10 @@ import { LoginComponent } from './components/misc/login/login.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
 import { SignupComponent } from './components/misc/signup/signup.component';
 import { UsersService } from './shared/services/users.service';
+import { ApiService } from './shared/services/api.service';
 import { PhoneCreateComponent } from './components/phone/phone-create/phone-create.component';
 import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.component';
+import { BoxesListComponent } from './components/boxes/boxes-list/boxes-list.component';
 
 @NgModule({
   declarations: [
@@ -32,18 +35,21 @@ import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.com
     NavbarComponent,
     SignupComponent,
     PhoneCreateComponent,
-    PhoneBaseComponent
+    PhoneBaseComponent,
+    BoxesListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
     PhonesService,
     SessionService,
     UsersService,
+    ApiService,
     IsAuthenticatedGuard,
     PhoneDetailsResolverGuard,
     CanLeavePhoneCreateGuard,
