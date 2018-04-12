@@ -26,6 +26,7 @@ import { PhoneCreateComponent } from './components/phone/phone-create/phone-crea
 import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.component';
 import { BoxesListComponent } from './components/boxes/boxes-list/boxes-list.component';
 import { BoxesBaseComponent } from './components/boxes/boxes-base/boxes-base.component';
+import { BoxesCreateComponent } from './boxes-create/boxes-create.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BoxesBaseComponent } from './components/boxes/boxes-base/boxes-base.com
     PhoneCreateComponent,
     PhoneBaseComponent,
     BoxesListComponent,
-    BoxesBaseComponent
+    BoxesBaseComponent,
+    BoxesCreateComponent
   ],
   imports: [
     BrowserModule,
