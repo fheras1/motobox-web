@@ -1,4 +1,5 @@
 export class Box {
+    id: string;
     address: string;
     name: string;
     contact: string;
