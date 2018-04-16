@@ -10,6 +10,7 @@ export class Box {
         const data = new FormData();
         data.append('address', this.address);
         data.append('name', this.name);
+        data.append('contact', this.contact);
         for (const reviews of this.reviews) {
             data.append('reviews', reviews);
         }

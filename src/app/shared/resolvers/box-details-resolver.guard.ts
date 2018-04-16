@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Injectable()
-export class PhoneDetailsResolverGuard implements Resolve<Box> {
+export class BoxDetailsResolverGuard implements Resolve<Box> {
 
   constructor(
     private router: Router,

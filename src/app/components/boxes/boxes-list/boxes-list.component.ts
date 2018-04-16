@@ -1,4 +1,5 @@
-import { ApiService } from './../../../shared/services/api.service';
+import { Box } from './../../../shared/model/box.model';
+import { BoxesService } from './../../../shared/services/boxes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boxes-list.component.css']
 })
 export class BoxesListComponent implements OnInit {
+  private boxes: Box[] = [];
 
-  constructor(private apiservice: ApiService) { }
+  constructor(private boxesService: BoxesService) { }
 
   ngOnInit() {
-    this.apiservice.getBoxes().subscribe(data => {
-      console.log(data);
+    this.boxesService.list().subscribe(data => {
+      this.boxes = data;
     });
   }
 

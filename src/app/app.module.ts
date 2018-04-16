@@ -1,3 +1,4 @@
+import { BoxesService } from './shared/services/boxes.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 import { CanLeavePhoneCreateGuard } from './shared/guards/can-leave-phone-create.guard';
 import { PhoneDetailsResolverGuard } from './shared/resolvers/phone-details-resolver.guard';
@@ -27,7 +28,7 @@ import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.com
 import { BoxesListComponent } from './components/boxes/boxes-list/boxes-list.component';
 import { BoxesBaseComponent } from './components/boxes/boxes-base/boxes-base.component';
 import { BoxesCreateComponent } from './components/boxes/boxes-create/boxes-create.component';
-import { BoxItemComponent } from './components/box-item/box-item.component';
+import { BoxItemComponent } from './components/boxes/box-item/box-item.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { BoxItemComponent } from './components/box-item/box-item.component';
     IsAuthenticatedGuard,
     PhoneDetailsResolverGuard,
     CanLeavePhoneCreateGuard,
+    BoxesService,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

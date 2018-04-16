@@ -17,7 +17,8 @@ export class BoxesCreateComponent {
 
   constructor(
     private router: Router,
-    private boxService: BoxesService) {}
+    private boxService: BoxesService
+  ) {}
 
 
   addReview(reviews: HTMLInputElement) {
@@ -31,10 +32,10 @@ export class BoxesCreateComponent {
     this.box.reviews = this.box.reviews.filter(s => s !== reviews);
   }
 
-  onSubmitBox(boxForm: NgForm) {
-    const imageFile = this.imageFile.nativeElement;
-    if (imageFile.files && imageFile.files[0]) {
-      this.box.image = imageFile.files[0];
+  onSubmitBoxes(boxForm: NgForm) {
+    // const imageFile = this.imageFile.nativeElement;
+    // if (imageFile.files && imageFile.files[0]) {
+    //   this.box.image = imageFile.files[0];
       this.boxService.create(this.box)
         .subscribe(
           (box) => {
@@ -45,7 +46,7 @@ export class BoxesCreateComponent {
             this.apiError = error;
           }
       );
-    }
+    // }
   }
 
   canLeaveTheComponent(): boolean {
