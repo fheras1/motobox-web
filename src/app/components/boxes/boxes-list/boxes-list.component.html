@@ -1,3 +1,7 @@
-<p>
-  boxes-list works!
-</p>
+<ul>
+  <li *ngFor="let box of boxes">
+    {{box.name}}<br>
+    {{box.address}}<br>
+    <hr>
+  </li>
+</ul>

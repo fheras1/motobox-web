@@ -1,27 +1,13 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
-    <form (ngSubmit)="onSubmitPhone(phoneForm)" #phoneForm="ngForm">
-      <div class="form-group" [class.has-error]="brand.errors && brand.touched">
+    <form (ngSubmit)="onSubmitBoxes(boxForm)" #boxForm="ngForm">
+      <div class="form-group" [class.has-error]="name.errors && name.touched">
         <div class="input-group">
           <span class="input-group-addon">
             <i class="fa fa-fire"></i>
           </span>
-          <input type="text" name="brand" class="form-control" placeholder="Brand" [(ngModel)]="phone.brand" #brand="ngModel" required>
-        </div>
-        <label class="control-label" *ngIf="brand.errors && brand.touched">
-          <ul>
-            <li *ngIf="brand.errors.required">Required</li>
-          </ul>
-        </label>
-      </div>
-
-      <div class="form-group" [class.has-error]="name.errors && name.touched">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-tag"></i>
-          </span>
-          <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="phone.name" #name="ngModel" required>
+          <input type="text" name="brand" class="form-control" placeholder="Name" [(ngModel)]="box.name" #name="ngModel" required>
         </div>
         <label class="control-label" *ngIf="name.errors && name.touched">
           <ul>
@@ -30,7 +16,35 @@
         </label>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="address.errors && address.touched">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-tag"></i>
+          </span>
+          <input type="text" name="name" class="form-control" placeholder="Address" [(ngModel)]="box.address" #address="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="address.errors && address.touched">
+          <ul>
+            <li *ngIf="address.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group" [class.has-error]="contact.errors && contact.touched">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-tag"></i>
+            </span>
+            <input type="text" name="name" class="form-control" placeholder="Contact" [(ngModel)]="box.contact" #contact="ngModel" required>
+          </div>
+          <label class="control-label" *ngIf="contact.errors && contact.touched">
+            <ul>
+              <li *ngIf="contact.errors.required">Required</li>
+            </ul>
+          </label>
+        </div>
+
+      <!-- <div class="form-group">
         <div class="input-group">
           <span class="input-group-addon">
             <i class="fa fa-tag"></i>
@@ -54,7 +68,7 @@
             </button>
           </span>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group">
         <div class="input-group">
@@ -72,7 +86,7 @@
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="btn btn-block btn-primary" [disabled]="!phoneForm.valid">Add Phone</button>
+        <button type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Add Box</button>
       </div>
     </form>
   </div>
