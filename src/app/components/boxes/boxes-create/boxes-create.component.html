@@ -21,7 +21,7 @@
           <span class="input-group-addon">
             <i class="fa fa-tag"></i>
           </span>
-          <input type="text" name="name" class="form-control" placeholder="Address" [(ngModel)]="box.address" #address="ngModel" required>
+          <input type="text" name="address" class="form-control" placeholder="Address" [(ngModel)]="box.address" #address="ngModel" required>
         </div>
         <label class="control-label" *ngIf="address.errors && address.touched">
           <ul>
@@ -35,7 +35,7 @@
             <span class="input-group-addon">
               <i class="fa fa-tag"></i>
             </span>
-            <input type="text" name="name" class="form-control" placeholder="Contact" [(ngModel)]="box.contact" #contact="ngModel" required>
+            <input type="text" name="contact" class="form-control" placeholder="Contact" [(ngModel)]="box.contact" #contact="ngModel" required>
           </div>
           <label class="control-label" *ngIf="contact.errors && contact.touched">
             <ul>
@@ -86,7 +86,10 @@
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Add Box</button>
+        <button *ngIf="!editBox; else editBlock" type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Add Box</button>
+        <ng-template #editBlock>
+            <button type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Edit Box</button>
+        </ng-template>
       </div>
     </form>
   </div>
