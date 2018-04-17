@@ -34,6 +34,7 @@ export class BoxesCreateComponent implements OnInit{
           this.box.contact = data['box'].contact;
           this.box.address = data['box'].address;
           this.box.reviews = data['box'].reviews;
+          this.box.image = data['box'].image;
           this.editBox = true;
         }
       });
@@ -50,6 +51,14 @@ export class BoxesCreateComponent implements OnInit{
   removeReviews(reviews: string) {
     this.box.reviews = this.box.reviews.filter(s => s !== reviews);
   }
+onDeleteBox() {
+  if (window.confirm('Are you sure?')) {
+    this.boxService.delete(this.box.id)
+      .subscribe(() => {
+        this.router.navigate(['/boxes']);
+      });
+  }
+}
 
   onSubmitBoxes(boxForm: NgForm) {
     if (this.editBox) {
@@ -64,20 +73,20 @@ export class BoxesCreateComponent implements OnInit{
         }
       );
     } else {
-// const imageFile = this.imageFile.nativeElement;
-    // if (imageFile.files && imageFile.files[0]) {
-    //   this.box.image = imageFile.files[0];
-    this.boxService.create(this.box)
-    .subscribe(
-      (box) => {
-        boxForm.reset();
-        this.router.navigate(['/boxes']);
-      },
-      (error) => {
-        this.apiError = error;
+      const imageFile = this.imageFile.nativeElement;
+      if (imageFile.files && imageFile.files[0]) {
+        this.box.image = imageFile.files[0];
       }
-  );
-// }
+      this.boxService.create(this.box)
+      .subscribe(
+        (box) => {
+          boxForm.reset();
+          this.router.navigate(['/boxes']);
+        },
+        (error) => {
+          this.apiError = error;
+        }
+      );
     }
 
   }

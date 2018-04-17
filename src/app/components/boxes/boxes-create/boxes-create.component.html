@@ -1,5 +1,8 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div *ngIf="editBox">
+      <img src="{{box.image}}" alt="">
+    </div>
 
     <form (ngSubmit)="onSubmitBoxes(boxForm)" #boxForm="ngForm">
       <div class="form-group" [class.has-error]="name.errors && name.touched">
@@ -70,7 +73,7 @@
         </div>
       </div> -->
 
-      <div class="form-group">
+      <div *ngIf="!editBox" class="form-group">
         <div class="input-group">
           <span class="input-group-addon">
             <i class="fa fa-picture"></i>
@@ -89,6 +92,7 @@
         <button *ngIf="!editBox; else editBlock" type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Add Box</button>
         <ng-template #editBlock>
             <button type="submit" class="btn btn-block btn-primary" [disabled]="!boxForm.valid">Edit Box</button>
+            <button (click)="onDeleteBox()" type="button" class="btn btn-block btn-danger">Delete Box</button>
         </ng-template>
       </div>
     </form>
