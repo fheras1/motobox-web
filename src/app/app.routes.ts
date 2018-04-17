@@ -33,7 +33,7 @@ export const routes: Routes = [
                 resolve: {
                     box: BoxDetailsResolverGuard
                 },
-                component: BoxItemComponent
+                component: BoxesCreateComponent
             }
         ]
     },

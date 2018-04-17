@@ -32,7 +32,7 @@ export class BoxesService extends BaseApiService {
   }
 
   edit(box: Box): Observable<Box> {
-    return this.http.put(`BoxesService.BOXES_API/${box.id}`, box.asFormData(), new RequestOptions({ withCredentials: true }))
+    return this.http.put(`${BoxesService.BOXES_API}/${box.id}`, box.asFormData(), new RequestOptions({ withCredentials: true }))
       .map((res: Response) => res.json())
       .catch(error => this.handleError(error));
   }

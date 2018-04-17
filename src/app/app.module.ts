@@ -1,3 +1,4 @@
+import { BoxDetailsResolverGuard } from './shared/resolvers/box-details-resolver.guard';
 import { BoxesService } from './shared/services/boxes.service';
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
 import { CanLeavePhoneCreateGuard } from './shared/guards/can-leave-phone-create.guard';
@@ -59,6 +60,7 @@ import { BoxItemComponent } from './components/boxes/box-item/box-item.component
     ApiService,
     IsAuthenticatedGuard,
     PhoneDetailsResolverGuard,
+    BoxDetailsResolverGuard,
     CanLeavePhoneCreateGuard,
     BoxesService,
     {

@@ -2,6 +2,7 @@
   <li *ngFor="let box of boxes">
     {{box.name}}<br>
     {{box.address}}<br>
+    <a [routerLink]="['/boxes', box.id]">Edit</a>
     <hr>
   </li>
 </ul>
