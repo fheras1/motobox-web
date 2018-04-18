@@ -2,11 +2,17 @@
     display: inline-block;
     vertical-align: middle;
 }
-
+nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
 .navbar-brand img {
     max-width: 20px;
     width: 100%;
 }
-.logo {
-    width: 100%;
+
+nav.navbar {
+    background-color: rgb(51, 160, 66);
+}
+nav.navbar.active {
+    background-color: chartreuse;
 }
