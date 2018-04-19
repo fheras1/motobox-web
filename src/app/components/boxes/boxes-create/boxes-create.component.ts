@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './boxes-create.component.html',
   styleUrls: ['./boxes-create.component.css']
 })
-export class BoxesCreateComponent implements OnInit{
+export class BoxesCreateComponent implements OnInit {
   box: Box = new Box();
   apiError: string;
   editBox: boolean;
