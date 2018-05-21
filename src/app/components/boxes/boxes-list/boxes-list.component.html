@@ -1,16 +1,16 @@
 <div class="container">
-<div class="row">
-  <div class="col-lg-4" *ngFor="let box of boxes">
-    <div class="thumbnail">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let box of boxes">
+      <div class="thumbnail">
         <div *ngIf="box.image">
-            <img src="{{box.image}}" alt="" height="100">
+            <img src="{{box.image}}" alt="" height="100" width="200">
         </div>
           <div class="caption">
             <p>{{box.name}}</p>
             <p>{{box.address}}</p>
             <p>{{box.contact}}</p>
         </div>
-        <a [routerLink]="['/boxes', box.id]">Edit</a>
+        <a [routerLink]="['/boxes', box.id]" class="btn btn-sm btn-primary">Edit</a>
     </div>
 </div>
 </div>

@@ -5,3 +5,11 @@
     list-style: none;
     margin: 0;
 }
+.foot {
+    text-align: center;
+}
+.background {
+    background-image: url("http://static2.uk.businessinsider.com/image/58d158832a93911a008b4821/the-top-5-contenders-for-the-2017-motogp-championship.jpg");
+    background-position: center;
+    width: 100%;
+}
