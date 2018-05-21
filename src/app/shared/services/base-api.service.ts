@@ -17,6 +17,7 @@ export class BaseApiService {
     }
     const errorData = error.json();
     errorData.status = error.status;
+    console.log(errorData);
     return Observable.throw(errorData);
   }
 

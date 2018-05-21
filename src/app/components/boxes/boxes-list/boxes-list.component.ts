@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boxes-list.component.css']
 })
 export class BoxesListComponent implements OnInit {
-  private boxes: Box[] = [];
+  public boxes: Box[] = [];
 
-  constructor(private boxesService: BoxesService) { }
+  constructor(public boxesService: BoxesService) { }
 
   ngOnInit() {
     this.boxesService.list().subscribe(data => {
