@@ -9,7 +9,11 @@
     text-align: center;
 }
 .background {
-    background-image: url("http://static2.uk.businessinsider.com/image/58d158832a93911a008b4821/the-top-5-contenders-for-the-2017-motogp-championship.jpg");
-    background-position: center;
-    width: 100%;
+    
+    background-image: url("https://cdn.pixabay.com/photo/2017/01/18/15/51/paper-1990111_960_720.jpg");
+    background-Repeat:no-repeat;
+    background-Attachment:fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: #FAFAD2;
 }
